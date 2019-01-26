@@ -32,6 +32,6 @@ class GetAllSongsTest(BaseViewTest):
         )
         #fetch data from db
         expected = Songs.objects.all()
-        serialized = SongsSerializer(expected, many=True)
+        serialized = SongSerializer(expected, many=True)
         self.assertEqual(response.data, serialized.data)
         self.assertEqual(response.status_code, status.HTTP_200_ok)
